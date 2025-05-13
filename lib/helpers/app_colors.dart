@@ -6,6 +6,7 @@ class ColorConstants {
   static const Color Textcolor = Color.fromRGBO(49, 89, 48, 1);
   static const Color grey = Colors.grey;
   static const Color white = Colors.white;
+  static const Color containercolor = Color.fromRGBO(234, 255, 237, 1);
   static const Color Textfieldcolor = Color.fromRGBO(255, 255, 255, 1);
   static const Color buttoncolor = Color.fromRGBO(52, 161, 65, 1);
   static const Color yellow = Colors.yellow;

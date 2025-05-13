@@ -208,11 +208,24 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ],
               ),
               child: TextField(
-                style: GoogleFonts.roboto(
-                    fontSize: 13.sp, fontWeight: FontWeight.w400),
+                //style: GoogleFonts.roboto(
+                //  fontSize: 13.sp, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search_outlined),
-                  hintText: "Search for health conditions",
+                  //  prefixIcon: Icon(Icons.search_outlined),
+                  // hintText: "Search for health conditions",
+                  label: Row(
+                    children: [
+                      Image.asset("assets/images/search.png"),
+                      SizedBox(width: 5),
+                      Text(
+                        "Search for health conditions",
+                        style: GoogleFonts.roboto(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w400,
+                            color: ColorConstants.grey),
+                      )
+                    ],
+                  ),
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
@@ -255,7 +268,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               margin: EdgeInsets.only(top: 8.h),
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
               decoration: BoxDecoration(
-                color: Colors.green[100],
+                color: ColorConstants.containercolor,
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: Row(
