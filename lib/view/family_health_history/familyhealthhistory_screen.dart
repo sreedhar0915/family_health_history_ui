@@ -63,7 +63,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                   fontSize: 14.sp,
                   color: ColorConstants.grey),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 20),
             Text(
               "Name (optional)",
               style: GoogleFonts.roboto(
@@ -98,7 +98,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Text(
               "Relationship",
               style: GoogleFonts.roboto(
@@ -149,7 +149,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Text(
               "Age",
               style: GoogleFonts.roboto(
@@ -185,7 +185,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Text(
               "Health Condition",
               style: GoogleFonts.roboto(
@@ -241,7 +241,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Text(
               "Reports(optional)",
               style: GoogleFonts.roboto(
@@ -271,7 +271,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Text(
               "Notes (optional)",
               style: GoogleFonts.roboto(
