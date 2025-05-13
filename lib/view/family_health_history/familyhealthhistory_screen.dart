@@ -23,27 +23,15 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Family Health His',
-              style: GoogleFonts.roboto(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                backgroundColor: ColorConstants.yellow,
-                color: ColorConstants.black,
-              ),
+        title: Center(
+          child: Text(
+            'Family Health History',
+            style: GoogleFonts.roboto(
+              fontSize: 17.sp,
+              fontWeight: FontWeight.bold,
+              color: ColorConstants.black,
             ),
-            Text(
-              'tory',
-              style: GoogleFonts.roboto(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                color: ColorConstants.black,
-              ),
-            ),
-          ],
+          ),
         ),
         backgroundColor: ColorConstants.white,
         surfaceTintColor: ColorConstants.white,
@@ -59,43 +47,24 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
           IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.edit,
+                Icons.edit_outlined,
                 size: 20.sp,
               )),
           SizedBox(width: 10.w)
         ],
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.w),
+        padding: EdgeInsets.all(10.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Help doctors understand your genetic risks by uploading your ",
+              "Help doctors understand your genetic risks by uploading your family health history.",
               maxLines: 2,
               style: GoogleFonts.roboto(
-                  fontSize: 14.sp, color: ColorConstants.grey),
-            ),
-            Row(
-              children: [
-                Text(
-                  'Family Health His',
-                  style: GoogleFonts.roboto(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    backgroundColor: ColorConstants.yellow,
-                    color: ColorConstants.black,
-                  ),
-                ),
-                Text(
-                  'tory',
-                  style: GoogleFonts.roboto(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    color: ColorConstants.grey,
-                  ),
-                ),
-              ],
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.sp,
+                  color: ColorConstants.grey),
             ),
             SizedBox(height: 20.h),
             Padding(
@@ -103,13 +72,17 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Text(
                 "Name (optional)",
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500, fontSize: 14.sp),
+                    color: ColorConstants.Textcolor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
               ),
             ),
             Container(
+              height: 50.h,
+              width: 342.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25.r),
+                borderRadius: BorderRadius.circular(115.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
@@ -126,7 +99,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                   filled: true,
                   fillColor: ColorConstants.white,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.r),
+                    borderRadius: BorderRadius.circular(115.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
@@ -137,13 +110,17 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Text(
                 "Relationship",
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500, fontSize: 14.sp),
+                    color: ColorConstants.Textcolor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
               ),
             ),
             Container(
+              height: 50.h,
+              width: 342.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25.r),
+                borderRadius: BorderRadius.circular(115.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
@@ -157,10 +134,21 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: DropdownButtonFormField<String>(
                   value: relationship,
-                  style:
-                      GoogleFonts.roboto(fontSize: 14.sp, color: Colors.black),
+                  style: GoogleFonts.roboto(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black),
                   decoration: InputDecoration(border: InputBorder.none),
-                  items: ['Father', 'Mother', 'Sibling'].map((value) {
+                  items: [
+                    'Brother',
+                    'Sister',
+                    'Mother',
+                    'Father',
+                    'Grand Mother (maternal)',
+                    'Grand Mother (paternal)',
+                    'Grand Father (maternal) ',
+                    'Grand Mother (paternal)'
+                  ].map((value) {
                     return DropdownMenuItem(value: value, child: Text(value));
                   }).toList(),
                   onChanged: (value) {
@@ -176,13 +164,17 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Text(
                 "Age",
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500, fontSize: 14.sp),
+                    color: ColorConstants.Textcolor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
               ),
             ),
             Container(
+              height: 50.h,
+              width: 342.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25.r),
+                borderRadius: BorderRadius.circular(115.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
@@ -200,7 +192,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.r),
+                    borderRadius: BorderRadius.circular(115.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
@@ -211,13 +203,17 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Text(
                 "Health Condition",
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500, fontSize: 14.sp),
+                    color: ColorConstants.Textcolor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
               ),
             ),
             Container(
+              height: 50.h,
+              width: 340.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25.r),
+                borderRadius: BorderRadius.circular(82.r),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.4),
@@ -228,14 +224,15 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ],
               ),
               child: TextField(
-                style: GoogleFonts.roboto(fontSize: 14.sp),
+                style: GoogleFonts.roboto(
+                    fontSize: 13.sp, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search_outlined),
                   hintText: "Search for health conditions",
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.r),
+                    borderRadius: BorderRadius.circular(82.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
@@ -243,18 +240,20 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             SizedBox(height: 8.h),
             Container(
-              height: 50.h,
-              width: 150.w,
+              height: 40.h,
+              width: 115.w,
               decoration: BoxDecoration(
                 color: ColorConstants.buttoncolor,
                 border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(30.r),
+                borderRadius: BorderRadius.circular(25.r),
               ),
               child: Center(
                 child: Text(
                   "Diabetes",
                   style: GoogleFonts.roboto(
-                      color: ColorConstants.white, fontSize: 20.sp),
+                      color: ColorConstants.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15.sp),
                 ),
               ),
             ),
@@ -263,11 +262,14 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Text(
                 "Reports(optional)",
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500, fontSize: 14.sp),
+                    color: ColorConstants.Textcolor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
               ),
             ),
             Container(
-              width: 350.w,
+              height: 48.h,
+              width: 281.w,
               margin: EdgeInsets.only(top: 8.h),
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
               decoration: BoxDecoration(
@@ -278,8 +280,12 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Comprehensive Health Summary",
-                      style: GoogleFonts.roboto(fontSize: 14.sp)),
-                  Icon(Icons.close),
+                      style: GoogleFonts.roboto(
+                          fontSize: 14.sp, fontWeight: FontWeight.w400)),
+                  Icon(
+                    Icons.close,
+                    size: 24,
+                  ),
                 ],
               ),
             ),
@@ -288,13 +294,17 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Text(
                 "Notes (optional)",
                 style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500, fontSize: 14.sp),
+                    color: ColorConstants.Textcolor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
               ),
             ),
             Container(
+              height: 58.h,
+              width: 343.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(15.r),
+                borderRadius: BorderRadius.circular(10.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
@@ -311,7 +321,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.r),
+                    borderRadius: BorderRadius.circular(10.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
