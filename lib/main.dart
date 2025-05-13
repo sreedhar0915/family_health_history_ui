@@ -1,4 +1,4 @@
-import 'package:family_health_history_ui/view/familyhealthhistory_screen/familyhealthhistory_screen.dart';
+import 'package:family_health_history_ui/view/family_health_history/familyhealthhistory_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

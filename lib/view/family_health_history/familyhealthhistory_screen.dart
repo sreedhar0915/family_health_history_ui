@@ -1,3 +1,5 @@
+import 'package:family_health_history_ui/helpers/app_colors.dart';
+import 'package:family_health_history_ui/helpers/screen_config.dart';
 import 'package:flutter/material.dart';
 
 class FamilyHealthHistoryScreen extends StatefulWidget {
@@ -15,6 +17,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.getInstance().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -25,23 +28,23 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 TextSpan(
                   text: 'Family Health His',
                   style: TextStyle(
-                    backgroundColor: Colors.yellow,
-                    color: Colors.black,
+                    backgroundColor: ColorConstants.yellow,
+                    color: ColorConstants.black,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: 'tory',
-                  style: TextStyle(color: Colors.black, fontSize: 18),
+                  style: TextStyle(color: ColorConstants.black, fontSize: 18),
                 ),
               ],
             ),
           ),
         ),
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
-        foregroundColor: Colors.black,
+        backgroundColor: ColorConstants.white,
+        surfaceTintColor: ColorConstants.white,
+        foregroundColor: ColorConstants.black,
         elevation: 0,
         leading: Icon(Icons.arrow_back_ios_new),
         actions: [Icon(Icons.edit), SizedBox(width: 10)],
@@ -54,9 +57,27 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             Padding(
               padding: const EdgeInsets.only(right: 40),
               child: Text(
-                "Help doctors understand your genetic risks by uploading your family health history.",
+                "Help doctors understand your genetic risks by uploading your ",
                 maxLines: 2,
-                style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 14, color: ColorConstants.grey),
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'family Health His',
+                    style: TextStyle(
+                      backgroundColor: ColorConstants.yellow,
+                      color: ColorConstants.black,
+                      fontSize: 18,
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'tory',
+                    style: TextStyle(color: ColorConstants.grey, fontSize: 14),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 20),
@@ -69,11 +90,11 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(25),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.4),
+                    color: ColorConstants.grey.withOpacity(0.4),
                     spreadRadius: 1,
                     blurRadius: 8,
                     offset: Offset(0, 3),
@@ -83,9 +104,9 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
-                  hintText: "Anand Kumar",
+                  //  hintText: "Anand Kumar",
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: ColorConstants.white,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide.none,
@@ -102,11 +123,11 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(25),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.4),
+                    color: ColorConstants.grey.withOpacity(0.4),
                     spreadRadius: 1,
                     blurRadius: 8,
                     offset: Offset(0, 3),
@@ -137,11 +158,11 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(25),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.4),
+                    color: ColorConstants.grey.withOpacity(0.4),
                     spreadRadius: 1,
                     blurRadius: 8,
                     offset: Offset(0, 3),
@@ -152,9 +173,9 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 controller: ageController,
                 keyboardType: TextInputType.numberWithOptions(),
                 decoration: InputDecoration(
-                  hintText: "65",
+                  // hintText: "65",
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide.none,
@@ -171,7 +192,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(25),
                 boxShadow: [
                   BoxShadow(
@@ -187,7 +208,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                   prefixIcon: Icon(Icons.search_outlined),
                   hintText: "Search for health conditions",
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide.none,
@@ -200,13 +221,13 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               height: 50,
               width: 150,
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: ColorConstants.buttoncolor,
                   border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(30)),
               child: Center(
                   child: Text(
                 "Diabetes",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(color: ColorConstants.white, fontSize: 20),
               )),
             ),
             Padding(
@@ -240,11 +261,11 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.4),
+                    color: ColorConstants.grey.withOpacity(0.4),
                     spreadRadius: 1,
                     blurRadius: 8,
                     offset: Offset(0, 3),
@@ -254,9 +275,9 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: TextField(
                 controller: notesController,
                 decoration: InputDecoration(
-                  hintText: "Takes Medicine for diabetes",
+                  // hintText: "Takes Medicine for diabetes",
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide.none,
@@ -272,7 +293,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: ColorConstants.buttoncolor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
@@ -282,7 +303,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: Colors.white),
+                        color: ColorConstants.white),
                   ),
                 ),
               ),
@@ -290,31 +311,6 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  // Widget _buildTextField(TextEditingController? controller,
-  //     {TextInputType keyboardType = TextInputType.text,
-  //     int maxLines = 1,
-  //     String? hint}) {
-  //   return TextField(
-  //       controller: controller,
-  //       keyboardType: keyboardType,
-  //       maxLines: maxLines,
-  //       decoration: InputDecoration(
-  //         hintText: hint,
-  //         fillColor: Colors.white,
-  //         border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-  //         contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-  //       ));
-  // }
-
-  Widget _buildChip(String label) {
-    return Chip(
-      label: Text(label),
-      backgroundColor: Colors.green,
-      labelStyle: TextStyle(color: Colors.white),
-      shape: StadiumBorder(),
     );
   }
 }
