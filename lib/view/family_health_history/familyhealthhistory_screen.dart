@@ -1,8 +1,11 @@
 import 'package:family_health_history_ui/helpers/app_colors.dart';
 import 'package:family_health_history_ui/helpers/screen_config.dart';
 import 'package:family_health_history_ui/helpers/size_extension.dart';
+import 'package:family_health_history_ui/view/family_health_history/provider/familyhealthhistory_provider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class FamilyHealthHistoryScreen extends StatefulWidget {
   @override
@@ -11,14 +14,9 @@ class FamilyHealthHistoryScreen extends StatefulWidget {
 }
 
 class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
-  final nameController = TextEditingController(text: 'Anand Kumar');
-  final ageController = TextEditingController(text: '65');
-  final notesController =
-      TextEditingController(text: 'Takes Medicine for Diabetes.');
-  String relationship = 'Father';
-
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<FamilyhealthhistoryProvider>(context);
     ScreenUtil.getInstance().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
@@ -28,7 +26,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             'Family Health History',
             style: GoogleFonts.roboto(
               fontSize: 17.sp,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
               color: ColorConstants.black,
             ),
           ),
@@ -50,11 +48,10 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 Icons.edit_outlined,
                 size: 20.sp,
               )),
-          SizedBox(width: 10.w)
         ],
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(10.w),
+        padding: EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -78,8 +75,6 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               ),
             ),
             Container(
-              height: 50.h,
-              width: 342.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(115.r),
@@ -93,7 +88,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ],
               ),
               child: TextField(
-                controller: nameController,
+                controller: provider.nameController,
                 style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
                   filled: true,
@@ -116,8 +111,6 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               ),
             ),
             Container(
-              height: 50.h,
-              width: 342.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(115.r),
@@ -133,7 +126,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: DropdownButtonFormField<String>(
-                  value: relationship,
+                  value: provider.relationship,
                   style: GoogleFonts.roboto(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
@@ -153,7 +146,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                   }).toList(),
                   onChanged: (value) {
                     setState(() {
-                      relationship = value!;
+                      provider.relationship = value!;
                     });
                   },
                 ),
@@ -170,8 +163,6 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               ),
             ),
             Container(
-              height: 50.h,
-              width: 342.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(115.r),
@@ -185,7 +176,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ],
               ),
               child: TextField(
-                controller: ageController,
+                controller: provider.ageController,
                 keyboardType: TextInputType.numberWithOptions(),
                 style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
@@ -209,8 +200,6 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               ),
             ),
             Container(
-              height: 50.h,
-              width: 340.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(82.r),
@@ -240,8 +229,8 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             ),
             SizedBox(height: 8.h),
             Container(
-              height: 40.h,
-              width: 115.w,
+              height: 40,
+              width: 115,
               decoration: BoxDecoration(
                 color: ColorConstants.buttoncolor,
                 border: Border.all(color: Colors.white),
@@ -300,8 +289,6 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               ),
             ),
             Container(
-              height: 58.h,
-              width: 343.w,
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
                 borderRadius: BorderRadius.circular(10.r),
@@ -315,7 +302,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
                 ],
               ),
               child: TextField(
-                controller: notesController,
+                controller: provider.notesController,
                 style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
                   filled: true,
