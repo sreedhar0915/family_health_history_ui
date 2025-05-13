@@ -1,6 +1,8 @@
 import 'package:family_health_history_ui/helpers/app_colors.dart';
 import 'package:family_health_history_ui/helpers/screen_config.dart';
+import 'package:family_health_history_ui/helpers/size_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FamilyHealthHistoryScreen extends StatefulWidget {
   @override
@@ -21,127 +23,143 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: 'Family Health His',
-                  style: TextStyle(
-                    backgroundColor: ColorConstants.yellow,
-                    color: ColorConstants.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(
-                  text: 'tory',
-                  style: TextStyle(color: ColorConstants.black, fontSize: 18),
-                ),
-              ],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Family Health His',
+              style: GoogleFonts.roboto(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+                backgroundColor: ColorConstants.yellow,
+                color: ColorConstants.black,
+              ),
             ),
-          ),
+            Text(
+              'tory',
+              style: GoogleFonts.roboto(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+                color: ColorConstants.black,
+              ),
+            ),
+          ],
         ),
         backgroundColor: ColorConstants.white,
         surfaceTintColor: ColorConstants.white,
         foregroundColor: ColorConstants.black,
         elevation: 0,
-        leading:
-            IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios_new)),
+        leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.arrow_back_ios_new,
+              size: 20.sp,
+            )),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
-          SizedBox(width: 10)
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.edit,
+                size: 20.sp,
+              )),
+          SizedBox(width: 10.w)
         ],
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 40),
-              child: Text(
-                "Help doctors understand your genetic risks by uploading your ",
-                maxLines: 2,
-                style: TextStyle(fontSize: 14, color: ColorConstants.grey),
-              ),
+            Text(
+              "Help doctors understand your genetic risks by uploading your ",
+              maxLines: 2,
+              style: GoogleFonts.roboto(
+                  fontSize: 14.sp, color: ColorConstants.grey),
             ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'family health his',
-                    style: TextStyle(
-                      backgroundColor: ColorConstants.yellow,
-                      color: ColorConstants.black,
-                      fontSize: 18,
-                    ),
+            Row(
+              children: [
+                Text(
+                  'Family Health His',
+                  style: GoogleFonts.roboto(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    backgroundColor: ColorConstants.yellow,
+                    color: ColorConstants.black,
                   ),
-                  TextSpan(
-                    text: 'tory',
-                    style: TextStyle(color: ColorConstants.grey, fontSize: 14),
+                ),
+                Text(
+                  'tory',
+                  style: GoogleFonts.roboto(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    color: ColorConstants.grey,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 6),
+              padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
               child: Text(
                 "Name (optional)",
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500, fontSize: 14.sp),
               ),
             ),
             Container(
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 8,
+                    spreadRadius: 1.r,
+                    blurRadius: 8.r,
                     offset: Offset(0, 3),
                   ),
                 ],
               ),
               child: TextField(
                 controller: nameController,
+                style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
-                  //  hintText: "Anand Kumar",
                   filled: true,
                   fillColor: ColorConstants.white,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 6),
+              padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
               child: Text(
                 "Relationship",
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500, fontSize: 14.sp),
               ),
             ),
             Container(
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 8,
+                    spreadRadius: 1.r,
+                    blurRadius: 8.r,
                     offset: Offset(0, 3),
                   ),
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: DropdownButtonFormField<String>(
                   value: relationship,
+                  style:
+                      GoogleFonts.roboto(fontSize: 14.sp, color: Colors.black),
+                  decoration: InputDecoration(border: InputBorder.none),
                   items: ['Father', 'Mother', 'Sibling'].map((value) {
                     return DropdownMenuItem(value: value, child: Text(value));
                   }).toList(),
@@ -154,21 +172,22 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 6),
+              padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
               child: Text(
                 "Age",
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500, fontSize: 14.sp),
               ),
             ),
             Container(
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 8,
+                    spreadRadius: 1.r,
+                    blurRadius: 8.r,
                     offset: Offset(0, 3),
                   ),
                 ],
@@ -176,139 +195,148 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               child: TextField(
                 controller: ageController,
                 keyboardType: TextInputType.numberWithOptions(),
+                style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
-                  // hintText: "65",
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 6),
+              padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
               child: Text(
                 "Health Condition",
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500, fontSize: 14.sp),
               ),
             ),
             Container(
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 8,
+                    spreadRadius: 1.r,
+                    blurRadius: 8.r,
                     offset: Offset(0, 3),
                   ),
                 ],
               ),
               child: TextField(
+                style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search_outlined),
                   hintText: "Search for health conditions",
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 8.h),
             Container(
-              height: 50,
-              width: 150,
+              height: 50.h,
+              width: 150.w,
               decoration: BoxDecoration(
-                  color: ColorConstants.buttoncolor,
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
+                color: ColorConstants.buttoncolor,
+                border: Border.all(color: Colors.white),
+                borderRadius: BorderRadius.circular(30.r),
+              ),
               child: Center(
-                  child: Text(
-                "Diabetes",
-                style: TextStyle(color: ColorConstants.white, fontSize: 20),
-              )),
+                child: Text(
+                  "Diabetes",
+                  style: GoogleFonts.roboto(
+                      color: ColorConstants.white, fontSize: 20.sp),
+                ),
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 6),
+              padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
               child: Text(
                 "Reports(optional)",
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500, fontSize: 14.sp),
               ),
             ),
             Container(
-              width: 350,
-              margin: EdgeInsets.only(top: 8),
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              width: 350.w,
+              margin: EdgeInsets.only(top: 8.h),
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
               decoration: BoxDecoration(
                 color: Colors.green[100],
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10.r),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Comprehensive Health Summary"),
+                  Text("Comprehensive Health Summary",
+                      style: GoogleFonts.roboto(fontSize: 14.sp)),
                   Icon(Icons.close),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 6),
+              padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
               child: Text(
                 "Notes (optional)",
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500, fontSize: 14.sp),
               ),
             ),
             Container(
               decoration: BoxDecoration(
                 color: ColorConstants.Textfieldcolor,
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(15.r),
                 boxShadow: [
                   BoxShadow(
                     color: ColorConstants.grey.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 8,
+                    spreadRadius: 1.r,
+                    blurRadius: 8.r,
                     offset: Offset(0, 3),
                   ),
                 ],
               ),
               child: TextField(
                 controller: notesController,
+                style: GoogleFonts.roboto(fontSize: 14.sp),
                 decoration: InputDecoration(
-                  // hintText: "Takes Medicine for diabetes",
                   filled: true,
                   fillColor: ColorConstants.Textfieldcolor,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                     borderSide: BorderSide.none,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Center(
               child: SizedBox(
                 width: double.infinity,
-                height: 50,
+                height: 50.h,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ColorConstants.buttoncolor,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(24.r),
                     ),
                   ),
                   child: Text(
                     'Save',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: ColorConstants.white),
+                    style: GoogleFonts.roboto(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorConstants.white,
+                    ),
                   ),
                 ),
               ),
