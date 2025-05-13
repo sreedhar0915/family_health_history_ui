@@ -46,8 +46,12 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
         surfaceTintColor: ColorConstants.white,
         foregroundColor: ColorConstants.black,
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios_new),
-        actions: [Icon(Icons.edit), SizedBox(width: 10)],
+        leading:
+            IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios_new)),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+          SizedBox(width: 10)
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
@@ -66,7 +70,7 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'family Health His',
+                    text: 'family health his',
                     style: TextStyle(
                       backgroundColor: ColorConstants.yellow,
                       color: ColorConstants.black,
@@ -233,11 +237,12 @@ class FamilyHealthHistoryScreenState extends State<FamilyHealthHistoryScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 6),
               child: Text(
-                "Reports (optional)",
+                "Reports(optional)",
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
             ),
             Container(
+              width: 350,
               margin: EdgeInsets.only(top: 8),
               padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
               decoration: BoxDecoration(
